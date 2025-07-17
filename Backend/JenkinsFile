@@ -10,17 +10,18 @@ pipeline{
         stage('Building docker image'){
             steps{
                 script{
-                    docker.build("nmj:${TAG}","Backend/.")
+                    docker.build("nmj:${TAG}",".")
                     echo "built successfull"
                 }
             }
         }
-        stage("pushing the image to docker hub")
+        stage("pushing the image to docker hub"){
             steps{
                 withDockerRegistry([credentialsId: 'docker-hub-creds', url: '']) {
                     docker.image("kaustubhapundir/studentcouncillingBackend").push()
                 }
 
             }
+        }
     }
 }
