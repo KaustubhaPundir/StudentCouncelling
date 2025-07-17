@@ -15,5 +15,12 @@ pipeline{
                 }
             }
         }
+        stage("pushing the image to docker hub")
+            steps{
+                withDockerRegistry([credentialsId: 'docker-hub-creds', url: '']) {
+                    docker.image("kaustubhapundir/studentcouncillingBackend").push()
+                }
+
+            }
     }
 }
