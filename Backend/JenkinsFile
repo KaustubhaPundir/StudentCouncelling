@@ -19,7 +19,7 @@ pipeline{
             steps{
                 script {
                     withDockerRegistry([credentialsId: 'docker-hub-creds', url: '']) {
-                        docker.image("${IMAGE_NAME}:${TAG}").push()
+                        docker.image("${IMAGE_NAME}").push()
                     }
                 }
             }
