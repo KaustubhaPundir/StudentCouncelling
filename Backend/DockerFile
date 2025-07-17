@@ -1,4 +1,4 @@
-FROM node:latest-alpine
+FROM node:24-alpine
 
 WORKDIR /usr/src/StudentCouncelling/Backend
 
@@ -8,5 +8,5 @@ RUN npm install
 
 EXPOSE 3000
 
-CMD [ "npm start" ]
+CMD ["npm" ,"start"]
 
