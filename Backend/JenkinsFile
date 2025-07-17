@@ -3,7 +3,6 @@ pipeline{
 
     environment {
         IMAGE_NAME = "kaustubhapundir/studentcouncillingbackend"
-        TAG = "latest"
     }
 
     stages{
