@@ -17,10 +17,11 @@ pipeline{
         }
         stage("pushing the image to docker hub"){
             steps{
-                withDockerRegistry([credentialsId: 'docker-hub-creds', url: '']) {
-                    docker.image("kaustubhapundir/studentcouncillingBackend").push()
+                script {
+                    withDockerRegistry([credentialsId: 'docker-hub-creds', url: '']) {
+                        docker.image("${IMAGE_NAME}:${IMAGE_TAG}").push()
+                    }
                 }
-
             }
         }
     }
