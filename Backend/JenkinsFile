@@ -1,0 +1,16 @@
+pipeline{
+    agent any
+
+    environment {
+        IMAGE_NAME = "kaustubhapundir/studentcouncillingBackend"
+        TAG = "latest"
+    }
+
+    stages{
+        stage('Building docker image'){
+            script{
+                docker build
+            }
+        }
+    }
+}
