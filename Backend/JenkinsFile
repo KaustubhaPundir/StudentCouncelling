@@ -10,7 +10,7 @@ pipeline{
         stage('Building docker image'){
             steps{
                 script{
-                    docker.build("nmj:${TAG}",".")
+                    docker.build("nmj:${TAG}","Backend/.")
                     echo "built successfull"
                 }
             }
